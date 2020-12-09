@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MyButtonConfig} from './MyButtonConfig';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angulartest';
+
+  config1: MyButtonConfig = {
+
+    text: 'Test1',
+    icon : '',
+    customCssClass : 'Custom',
+};
 }

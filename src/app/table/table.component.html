@@ -1,0 +1,15 @@
+<table mat-table class="mat-elevation-z8">
+  <thead>
+  <tr>
+    <th *ngFor="let column of tableConfig.headers">{{column.label}}</th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+    <td *ngFor="let column of data">
+      {{column}}
+    </td>
+
+  </tbody>
+</table>

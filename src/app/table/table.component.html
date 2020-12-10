@@ -6,10 +6,10 @@
   </thead>
 
   <tbody>
-  <tr *ngFor="let row of data.values();let i=index;">
-    <td *ngFor="let column of data[i].value">
-      {{column}}
-    </td>
-  </tr>
+  <td *ngFor="let row of reordered;">
+    <tr *ngFor="let column of tableConfig.headers;let i=index;" >
+      {{row[i]}}
+    </tr>
+  </td>
   </tbody>
 </table>

@@ -6,10 +6,10 @@
   </thead>
 
   <tbody>
-
-    <td *ngFor="let column of data">
+  <tr *ngFor="let row of data.values();let i=index;">
+    <td *ngFor="let column of data[i].value">
       {{column}}
     </td>
-
+  </tr>
   </tbody>
 </table>

@@ -1,15 +1,17 @@
 <table mat-table class="mat-elevation-z8">
+
   <thead>
-  <tr>
-    <th *ngFor="let column of tableConfig.headers">{{column.label}}</th>
+  <tr >
+    <th *ngFor="let column of tableConfig.headers;" ><mat-icon class = 'material-icons' (click) = "ordina(column.key);" > {{icon}}</mat-icon>{{column.label}}  </th>
+
   </tr>
   </thead>
 
   <tbody>
-  <td *ngFor="let row of reordered;">
-    <tr *ngFor="let column of tableConfig.headers;let i=index;" >
-      {{row[i]}}
-    </tr>
-  </td>
+  <tr *ngFor="let row of data;">
+    <td *ngFor="let column of tableConfig.headers;" >
+      {{row[column.key]}}
+    </td>
+  </tr>
   </tbody>
 </table>

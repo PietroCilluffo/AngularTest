@@ -3,6 +3,7 @@ import {MyButtonConfig} from './MyButtonConfig';
 import {MyTableConfig} from './MyTableConfig';
 import {MyHeaders} from './MyHeaders';
 import {DataObject} from './DataObject';
+import {MyOrder} from '../MyOrder';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,14 +18,7 @@ export class AppComponent {
     icon : 'android',
     customCssClass : 'bottoneGrande',
 };
-   /*dataObject: DataObject = {
-     campi: ['id', 'nome', 'cognome'],
-     value: ['0', 'Niccolo', 'Carosio'],
-   };
-   dataObject2: DataObject = {
-     campi: ['id', 'nome', 'cognome'],
-     value: ['1', 'Aldo', 'Baglio'],
-   };*/
+
   header = [{
     key: 'id',
     label: 'Id'
@@ -47,15 +41,17 @@ export class AppComponent {
       id: 2,
       cognome: 'Durso'
     }];
-  /* headerId =  new MyHeaders(this.dataObject.campi[0], 'id');
-   headerNome = new MyHeaders(this.dataObject.campi[1], 'nome');
-   headerCognome = new MyHeaders(this.dataObject.campi[2], 'cognome');
+  defaultcol: 'id';
+   orderconfig: MyOrder = {
+     defaultColumn: 'id',
+     orderType: 'asc',
 
-   headers = [this.headerId, this.headerNome, this.headerCognome];
-   provadati = [this.dataObject, this.dataObject2];*/
+   };
    provadati = this.data;
    configTable: MyTableConfig = {
     headers: this.header,
+     order: this.orderconfig,
+
   };
 }
 

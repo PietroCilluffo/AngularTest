@@ -1,3 +1,16 @@
+<select [(ngModel)]="selectedFilter">
+  <option  *ngFor = "let filter of tableConfig.search.columns" >
+    {{filter}}
+  </option>
+</select>
+
+
+  <input [(ngModel)] = "searched" type = "text"  value = "{{searched}}">
+  <button (click)="filtra();">Filtra</button>
+
+
+
+
 <table mat-table class="mat-elevation-z8">
 
   <thead>

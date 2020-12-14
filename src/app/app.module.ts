@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ButtonComponent } from './button/button.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TableComponent } from './table/table.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TableComponent } from './table/table.component';
     NoopAnimationsModule,
     MatIconModule,
     MatSortModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

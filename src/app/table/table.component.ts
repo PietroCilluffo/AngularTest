@@ -19,6 +19,8 @@ export class TableComponent implements OnInit {
   icon: string;
   key: string;
   value: string;
+  selectedFilter:string;
+  searched: string;
   constructor() { }
 
   ngOnInit(): void {
@@ -53,6 +55,12 @@ this.orderType = this.tableConfig.order.orderType;
 
     }
 
+  }
+
+  filtra( ){
+
+
+  this.data = this.data.filter((p: any) => p[this.selectedFilter].toString().includes(this.searched));
   }
 }
 

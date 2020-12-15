@@ -6,7 +6,7 @@
 
 
   <input [(ngModel)] = "searched" type = "text"  value = "{{searched}}">
-  <button (click)="filtra();">Filtra</button>
+
 
 
 
@@ -21,7 +21,7 @@
   </thead>
 
   <tbody>
-  <tr *ngFor="let row of data |  pagination: perPage: selectedPage">
+  <tr *ngFor="let row of data | filter: selectedFilter : searched |  pagination: perPage: selectedPage ">
     <td *ngFor="let column of tableConfig.headers;" >
       {{row[column.key]}}
     </td>
@@ -33,5 +33,7 @@
     {{itemPerPage}}
   </option>
 </select>
-
+<h4>Page</h4>
 <input [(ngModel)] = "selectedPage" type = "number"  value = "{{selectedPage}}">
+<br>
+<button *ngFor="let act of tableConfig.actions" (click) = "op(act)">{{act}}</button>

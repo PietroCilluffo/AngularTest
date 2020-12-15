@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {MyButtonConfig} from './MyButtonConfig';
 import {MyTableConfig} from './MyTableConfig';
-import {MyHeaders} from './MyHeaders';
-import {DataObject} from './DataObject';
 import {MyOrder} from './MyOrder';
 import {MySearch} from './MySearch';
 import {MyPagination} from './MyPagination';
+import {MyTableActionEnum} from './MyTableActionEnum';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,7 +13,9 @@ import {MyPagination} from './MyPagination';
 })
 export class AppComponent {
   title = 'Angulartest';
-
+  opButton(op: number){
+    console.log(op);
+  }
   config1: MyButtonConfig = {
 
     text: 'Test1',
@@ -63,7 +65,13 @@ export class AppComponent {
     {
       nome: 'Sandro',
       id: 6,
-      cognome: 'Piccini'
+      cognome: 'Piccinini'
+    },
+
+    {
+      nome: 'Luigi',
+      id: 7,
+      cognome: 'Kokko'
     }];
 
    orderconfig: MyOrder = {
@@ -78,12 +86,14 @@ export class AppComponent {
    searchconfig: MySearch = {
      columns: ['id', 'nome', 'cognome']
    };
+   actions: MyTableActionEnum[] = [MyTableActionEnum.NEW_ROW, MyTableActionEnum.EDIT, MyTableActionEnum.DELETE];
    provadati = this.data;
    configTable: MyTableConfig = {
      headers: this.header,
      order: this.orderconfig,
      search: this.searchconfig,
      pagination : this.pagination,
+     actions: this.actions,
 
 
   };

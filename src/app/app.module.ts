@@ -8,13 +8,15 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TableComponent } from './table/table.component';
 import {FormsModule} from '@angular/forms';
 import { PaginationPipe } from './pagination.pipe';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
     TableComponent,
-    PaginationPipe
+    PaginationPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

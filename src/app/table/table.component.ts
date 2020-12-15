@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {MyTableConfig} from '../MyTableConfig';
 import {orderBy} from 'lodash';
 import * as _ from 'lodash';
@@ -13,13 +13,14 @@ import * as _ from 'lodash';
 export class TableComponent implements OnInit {
   @Input () tableConfig: MyTableConfig ;
   @Input () data: any [];
+  @Output() operation = new EventEmitter<number>();
 
 
   orderType: string;
   icon: string;
   key: string;
   value: string;
-  selectedFilter:string;
+  selectedFilter: string;
   searched: string;
   selectedPage: number;
   perPage: number;
@@ -28,6 +29,8 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
     this.perPage = this.tableConfig.pagination.itemPerPage;
     this.selectedPage = 0;
+    this.selectedFilter = '';
+    this.searched = '';
     this.orderType = this.tableConfig.order.orderType;
     if (this.tableConfig.order.orderType === 'asc'){
       this.data = _.orderBy(this.data, [this.tableConfig.order.defaultColumn], ['asc']);
@@ -60,12 +63,10 @@ export class TableComponent implements OnInit {
     }
 
   }
-
-  filtra( ){
-
-
-  this.data = this.data.filter((p: any) => p[this.selectedFilter].toString().includes(this.searched));
+  op(operation: number) {
+    this.operation.emit(operation);
   }
+
 }
 
 

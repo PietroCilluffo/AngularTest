@@ -5,6 +5,7 @@ import {MyHeaders} from './MyHeaders';
 import {DataObject} from './DataObject';
 import {MyOrder} from './MyOrder';
 import {MySearch} from './MySearch';
+import {MyPagination} from './MyPagination';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -41,6 +42,28 @@ export class AppComponent {
       nome: 'Luigi',
       id: 2,
       cognome: 'Durso'
+    },
+
+    {
+      nome: 'Fabio',
+      id: 3,
+      cognome: 'Caressa'
+    },
+
+    {
+      nome: 'Billy',
+      id: 4,
+      cognome: 'Costacurta'
+    },
+    {
+      nome: 'Ste',
+      id: 5,
+      cognome: 'De Grandis'
+    },
+    {
+      nome: 'Sandro',
+      id: 6,
+      cognome: 'Piccini'
     }];
 
    orderconfig: MyOrder = {
@@ -48,15 +71,20 @@ export class AppComponent {
      orderType: 'asc',
 
    };
-
+   pagination: MyPagination = {
+     itemPerPage: 5,
+     itemPerPageOptions: [3, 5, 10]
+   };
    searchconfig: MySearch = {
      columns: ['id', 'nome', 'cognome']
    };
    provadati = this.data;
    configTable: MyTableConfig = {
-    headers: this.header,
+     headers: this.header,
      order: this.orderconfig,
      search: this.searchconfig,
+     pagination : this.pagination,
+
 
   };
 }

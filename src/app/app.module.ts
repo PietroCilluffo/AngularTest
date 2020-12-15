@@ -7,12 +7,14 @@ import { ButtonComponent } from './button/button.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TableComponent } from './table/table.component';
 import {FormsModule} from '@angular/forms';
+import { PaginationPipe } from './pagination.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
-    TableComponent
+    TableComponent,
+    PaginationPipe
   ],
   imports: [
     BrowserModule,

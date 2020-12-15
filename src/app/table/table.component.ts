@@ -21,10 +21,14 @@ export class TableComponent implements OnInit {
   value: string;
   selectedFilter:string;
   searched: string;
+  selectedPage: number;
+  perPage: number;
   constructor() { }
 
   ngOnInit(): void {
-this.orderType = this.tableConfig.order.orderType;
+    this.perPage = this.tableConfig.pagination.itemPerPage;
+    this.selectedPage = 0;
+    this.orderType = this.tableConfig.order.orderType;
     if (this.tableConfig.order.orderType === 'asc'){
       this.data = _.orderBy(this.data, [this.tableConfig.order.defaultColumn], ['asc']);
       this.orderType = 'asc';

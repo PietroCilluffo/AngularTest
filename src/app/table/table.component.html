@@ -21,10 +21,17 @@
   </thead>
 
   <tbody>
-  <tr *ngFor="let row of data;">
+  <tr *ngFor="let row of data |  pagination: perPage: selectedPage">
     <td *ngFor="let column of tableConfig.headers;" >
       {{row[column.key]}}
     </td>
   </tr>
   </tbody>
 </table>
+<select [(ngModel)]="perPage">
+  <option  *ngFor = "let itemPerPage of tableConfig.pagination.itemPerPageOptions" >
+    {{itemPerPage}}
+  </option>
+</select>
+
+<input [(ngModel)] = "selectedPage" type = "number"  value = "{{selectedPage}}">

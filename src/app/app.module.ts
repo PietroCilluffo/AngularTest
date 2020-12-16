@@ -7,9 +7,12 @@ import { ButtonComponent } from './button/button.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TableComponent } from './table/table.component';
 import {FormsModule} from '@angular/forms';
-import { PaginationPipe } from './pagination.pipe';
-import { FilterPipe } from './filter.pipe';
-
+import { PaginationPipe } from './pipe/pagination.pipe';
+import { FilterPipe } from './pipe/filter.pipe';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +27,10 @@ import { FilterPipe } from './filter.pipe';
     MatIconModule,
     MatSortModule,
     FormsModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

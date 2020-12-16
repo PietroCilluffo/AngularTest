@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {MyTableConfig} from '../MyTableConfig';
+import {MyTableConfig} from '../config/MyTableConfig';
 import {orderBy} from 'lodash';
 import * as _ from 'lodash';
 

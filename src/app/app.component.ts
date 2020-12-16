@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {MyButtonConfig} from './MyButtonConfig';
-import {MyTableConfig} from './MyTableConfig';
-import {MyOrder} from './MyOrder';
-import {MySearch} from './MySearch';
-import {MyPagination} from './MyPagination';
-import {MyTableActionEnum} from './MyTableActionEnum';
+import {MyButtonConfig} from './config/MyButtonConfig';
+import {MyTableConfig} from './config/MyTableConfig';
+import {MyOrder} from './config/MyOrder';
+import {MySearch} from './config/MySearch';
+import {MyPagination} from './config/MyPagination';
+import {MyTableActionEnum} from './config/MyTableActionEnum';
 
 @Component({
   selector: 'app-root',

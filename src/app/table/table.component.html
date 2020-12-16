@@ -1,9 +1,11 @@
-<select [(ngModel)]="selectedFilter">
-  <option  *ngFor = "let filter of tableConfig.search.columns" >
+<mat-form-field appearance="fill">
+  <mat-label>Cerca</mat-label>
+<mat-select matNativeControl [(ngModel)]="selectedFilter">
+  <mat-option  *ngFor = "let filter of tableConfig.search.columns" >
     {{filter}}
-  </option>
-</select>
-
+  </mat-option>
+</mat-select>
+</mat-form-field>
 
   <input [(ngModel)] = "searched" type = "text"  value = "{{searched}}">
 
@@ -28,12 +30,17 @@
   </tr>
   </tbody>
 </table>
-<select [(ngModel)]="perPage">
-  <option  *ngFor = "let itemPerPage of tableConfig.pagination.itemPerPageOptions" >
+<mat-form-field appearance="fill">
+  <mat-label>Elementi per pagina</mat-label>
+<mat-select  [(ngModel)]="perPage">
+  <mat-option  *ngFor = "let itemPerPage of tableConfig.pagination.itemPerPageOptions" >
     {{itemPerPage}}
-  </option>
-</select>
-<h4>Page</h4>
+  </mat-option>
+</mat-select>
+</mat-form-field>
+<mat-label>Page</mat-label>
 <input [(ngModel)] = "selectedPage" type = "number"  value = "{{selectedPage}}">
 <br>
-<button *ngFor="let act of tableConfig.actions" (click) = "op(act)">{{act}}</button>
+
+<button mat-raised-button color="primary" *ngFor="let act of tableConfig.actions" (click) = "op(act)" class = "b">{{act}}</button>
+

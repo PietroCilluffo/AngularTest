@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-import {MyButtonConfig} from '../MyButtonConfig';
+import {MyButtonConfig} from '../config/MyButtonConfig';
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
